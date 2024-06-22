@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: count-dash
+spec:
+  selector:
+    matchLabels:
+      app: count-dash
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: count-dash
+    spec:
+      containers:
+      - name: count-dash
+        image: hashicorpdev/counter-dashboard
+        ports:
+        - containerPort: 9002
