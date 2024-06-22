@@ -17,6 +17,6 @@ spec:
         image: hashicorpdev/counter-dashboard
         env:
         - name: COUNTING_SERVICE_URL
-          value: http://count-api.dev.svc.cluster.local
+          value: http://count-api.dev.svc.cluster.local:9001
         ports:
         - containerPort: 9002
