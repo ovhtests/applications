@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: count-api
+spec:
+  selector:
+    matchLabels:
+      app: count-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: count-api
+    spec:
+      containers:
+      - name: count-api
+        image: hashicorpnomad/counter-api
+        ports:
+        - containerPort: 9001
